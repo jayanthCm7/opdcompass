@@ -48,7 +48,7 @@ function ToolsPage() {
 }
 
 function initial(t: ClinicalTool): ToolValues {
-  return Object.fromEntries(t.fields.map((f) => [f.k, f.type === "check" ? false : f.type === "select" ? f.opts![0][0] : ""]));
+  return Object.fromEntries(t.fields.map((f) => [f.k, f.type === "check" ? false : f.type === "select" ? f.opts?.[0]?.[0] ?? "" : ""]));
 }
 
 function ToolCard({ t }: { t: ClinicalTool }) {

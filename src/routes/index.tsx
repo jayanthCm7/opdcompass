@@ -443,7 +443,7 @@ function Marquee({ onPick }: { onPick: (t: string) => void }) {
         {[...items, ...items].map((t, i) => (
           <button
             key={i}
-            onClick={() => onPick(t.split(/[\s/(]/)[0].toLowerCase())}
+            onClick={() => onPick((t.split(/[\s/(]/)[0] ?? t).toLowerCase())}
             className="flex shrink-0 items-center gap-2 rounded-full border border-border bg-card/40 px-4 py-2 text-sm text-muted-foreground transition hover:border-primary/40 hover:text-foreground"
           >
             <Activity className="h-3.5 w-3.5 text-primary" />
