@@ -606,7 +606,10 @@ function About() {
             </div>
           </div>
           <div>
-            <Eyebrow>About me · Care. Curiosity. Innovation.</Eyebrow>
+            <Eyebrow>About me</Eyebrow>
+            <div className="mt-3 font-serif text-2xl italic text-gradient md:text-3xl">
+              Care. Curiosity. Innovation.
+            </div>
             <h2 className="mt-3 text-4xl font-bold tracking-tight md:text-5xl">Dr Jayanth C M</h2>
             <div className="mt-2 flex flex-wrap items-center gap-3 text-sm text-muted-foreground">
               <span className="rounded-full border border-primary/30 bg-primary/10 px-3 py-1 text-primary">MBBS · Medical Officer</span>
