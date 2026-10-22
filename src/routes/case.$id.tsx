@@ -18,6 +18,7 @@ import {
   Star,
   TriangleAlert,
 } from "lucide-react";
+import compass from "@/assets/compass.png";
 import { Button } from "@/components/ui/button";
 import { Backdrop } from "@/components/site/Shell";
 import { SpecialtyBadge } from "@/components/site/CaseCard";
@@ -107,10 +108,10 @@ function CasePage() {
 
         {/* Header */}
         <div className="mt-6 grid gap-6 lg:grid-cols-[1.1fr_1fr]">
-          <div className="animate-rise flex flex-col justify-end rounded-[2rem] border border-border bg-card/50 p-7 md:p-10">
+          <div className="animate-rise flex flex-col items-start justify-end rounded-[2rem] border border-border bg-card/50 p-7 md:p-10">
             <SpecialtyBadge sp={c.sp} n={c.n} />
             <h1 className="mt-4 text-4xl font-bold leading-[1.02] tracking-tight md:text-6xl">{c.t}</h1>
-            <div className="relative mt-7 overflow-hidden rounded-2xl bg-brand p-5 text-primary-foreground shadow-glow">
+            <div className="relative mt-7 w-full overflow-hidden rounded-2xl bg-brand p-5 text-primary-foreground shadow-glow">
               <div className="shimmer-sweep absolute inset-0" />
               <div className="relative font-mono text-[10px] uppercase tracking-[0.2em] opacity-75">Most probable diagnosis</div>
               <div className="relative mt-1 font-display text-2xl font-bold">{c.dx}</div>
@@ -310,8 +311,13 @@ function Gallery({ c }: { c: ReturnType<typeof getCase> & {} }) {
   if (imgs === null) return <div className="min-h-80 animate-pulse rounded-[2rem] bg-card" />;
   if (!imgs.length)
     return (
-      <div className="grid min-h-80 place-items-center rounded-[2rem] border border-border bg-card/50 p-8 text-center text-sm text-muted-foreground">
-        No openly licensed clinical image available for this case.
+      <div className="relative grid min-h-80 place-items-center overflow-hidden rounded-[2rem] border border-border bg-card/50 p-8 text-center">
+        <div className="bg-grid absolute inset-0" />
+        <div className={cn("absolute inset-1/4 rounded-full blur-[90px]", c.sp === "Medicine" ? "bg-medicine/30" : "bg-obgyn/30")} />
+        <div className="relative">
+          <img src={compass} alt="" width={160} height={160} loading="lazy" className="animate-float mx-auto h-40 w-40" />
+          <p className="mt-4 font-mono text-[10px] uppercase tracking-[0.2em] text-muted-foreground">No openly licensed image for this case</p>
+        </div>
       </div>
     );
 

@@ -29,7 +29,7 @@ export function CommandPalette({
   };
 
   return (
-    <CommandDialog open={open} onOpenChange={onOpenChange}>
+    <CommandDialog open={open} onOpenChange={onOpenChange} filter={wordFilter}>
       <CommandInput placeholder="Type a complaint, diagnosis, tool or emergency…" />
       <CommandList className="max-h-[60vh]">
         <CommandEmpty>No match. Try “fever”, “BMI” or “stroke”.</CommandEmpty>
@@ -85,3 +85,10 @@ export function CommandPalette({
 }
 
 export const slug = (s: string) => s.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/(^-|-$)/g, "");
+
+/** Every typed word must appear in the item text. */
+function wordFilter(value: string, search: string) {
+  const v = value.toLowerCase();
+  const words = search.toLowerCase().split(/\s+/).filter(Boolean);
+  return words.every((w) => v.includes(w)) ? 1 : 0;
+}
