@@ -649,24 +649,18 @@ function Contact() {
           and I’ll get back to you as soon as I can.
         </p>
       </Reveal>
-      <div className="mt-12 grid gap-4 md:grid-cols-3">
+      <div className="mt-12 flex justify-center gap-5">
         {links.map((l, i) => (
           <Reveal key={l.label} delay={i * 100}>
             <a
               href={l.href}
               target={l.href.startsWith("http") ? "_blank" : undefined}
               rel="noopener noreferrer"
-              onMouseMove={spot}
-              className="spotlight group flex items-center gap-4 rounded-3xl border border-border bg-card/50 p-6 transition hover:-translate-y-1"
+              aria-label={l.label}
+              title={l.label}
+              className="grid h-20 w-20 place-items-center rounded-3xl bg-brand text-primary-foreground shadow-glow transition hover:-translate-y-1 hover:rotate-6 hover:scale-105"
             >
-              <span className="grid h-14 w-14 place-items-center rounded-2xl bg-brand text-primary-foreground shadow-glow transition group-hover:rotate-6 group-hover:scale-105">
-                <l.icon className="h-6 w-6" />
-              </span>
-              <span className="min-w-0">
-                <span className="block text-lg font-semibold">{l.label}</span>
-                <span className="block truncate text-sm text-muted-foreground">{l.sub}</span>
-              </span>
-              <ArrowRight className="ml-auto h-5 w-5 text-muted-foreground transition group-hover:translate-x-1 group-hover:text-primary" />
+              <l.icon className="h-8 w-8" />
             </a>
           </Reveal>
         ))}
