@@ -1,5 +1,5 @@
 /* Author-written legal copy, rendered as trusted static HTML. */
-const H = (t: string) => `<h4 class="pt-3 text-sm font-black text-slate-900">${t}</h4>`;
+const H = (t: string) => `<h4 class="pt-3 text-sm font-black text-foreground">${t}</h4>`;
 const P = (t: string) => `<p>${t}</p>`;
 const UL = (a: string[]) => `<ul class="list-disc space-y-1.5 pl-5">${a.map((x) => `<li>${x}</li>`).join("")}</ul>`;
 export const CONTACT_EMAIL = "jayanthcm.arpitha@gmail.com";
@@ -29,7 +29,7 @@ export const LEGAL: Record<string, { title: string; html: string }> = {
       H("4. No analytics, tracking, or advertising"),
       P("The application contains zero telemetry trackers, third-party advertising pixels, or invasive session recorders."),
       H("5. Your rights"),
-      P("Because your data remains on your device, you have direct control. Under India's Digital Personal Data Protection Act, 2023 (DPDP Act), for any questions regarding your data rights, write to <a class='font-bold text-blue-700 underline' href='mailto:" + CONTACT_EMAIL + "'>" + CONTACT_EMAIL + "</a>."),
+      P("Because your data remains on your device, you have direct control. Under India's Digital Personal Data Protection Act, 2023 (DPDP Act), for any questions regarding your data rights, write to <a class='font-semibold text-primary underline' href='mailto:" + CONTACT_EMAIL + "'>" + CONTACT_EMAIL + "</a>."),
       H("6. Updates"),
       P("This policy is current as of 2026.")
     ].join("")
@@ -50,13 +50,13 @@ export const LEGAL: Record<string, { title: string; html: string }> = {
       H("6. Governing law"),
       P("These terms are governed by the laws of India. Courts in Bengaluru, Karnataka, have exclusive jurisdiction."),
       H("7. Inquiries"),
-      P("Contact: <a class='font-bold text-blue-700 underline' href='mailto:" + CONTACT_EMAIL + "'>" + CONTACT_EMAIL + "</a>.")
+      P("Contact: <a class='font-semibold text-primary underline' href='mailto:" + CONTACT_EMAIL + "'>" + CONTACT_EMAIL + "</a>.")
     ].join("")
   },
   disclaimer: {
     title: "Medical Disclaimer",
     html: [
-      P("<b class='text-slate-900'>OPD Compass is for educational reference and prescription drafting only.</b> It does not constitute formal medical advice and must never replace qualified clinical judgement."),
+      P("<b class='text-foreground'>OPD Compass is for educational reference and prescription drafting only.</b> It does not constitute formal medical advice and must never replace qualified clinical judgement."),
       H("Before you prescribe"),
       UL([
         "Confirm diagnosis through history, physical examination, and appropriate investigations.",
@@ -67,7 +67,7 @@ export const LEGAL: Record<string, { title: string; html: string }> = {
       H("Calculators"),
       P("Clinical calculators provide estimation support only. Outputs depend entirely on the accuracy of the parameters entered."),
       H("Emergencies"),
-      P("Patients exhibiting red flag symptoms require immediate resuscitation, stabilization, and tertiary referral. In India, the national emergency response number is <b class='text-slate-900'>112</b>.")
+      P("Patients exhibiting red flag symptoms require immediate resuscitation, stabilization, and tertiary referral. In India, the national emergency response number is <b class='text-foreground'>112</b>.")
     ].join("")
   },
   cookies: {
@@ -88,7 +88,7 @@ export const LEGAL: Record<string, { title: string; html: string }> = {
   copyright: {
     title: "Copyright & Credits",
     html: [
-      P("<b class='text-slate-900'>© 2026 Dr Jayanth C M. All rights reserved.</b>"),
+      P("<b class='text-foreground'>© 2026 Dr Jayanth C M. All rights reserved.</b>"),
       H("Original work"),
       P("The OPD Compass name, UI design, source architecture, and clinical compilation are the intellectual work of Dr Jayanth C M."),
       H("Third-party assets"),
@@ -98,7 +98,7 @@ export const LEGAL: Record<string, { title: string; html: string }> = {
         "Brand names referenced (e.g. Augmentin, Pan-40, Corex-DX) are trademarks of their respective pharmaceutical manufacturers and are cited for educational reference only."
       ]),
       H("Inquiries & permissions"),
-      P("Write to <a class='font-bold text-blue-700 underline' href='mailto:" + CONTACT_EMAIL + "'>" + CONTACT_EMAIL + "</a>.")
+      P("Write to <a class='font-semibold text-primary underline' href='mailto:" + CONTACT_EMAIL + "'>" + CONTACT_EMAIL + "</a>.")
     ].join("")
   }
 };
