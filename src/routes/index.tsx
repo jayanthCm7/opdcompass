@@ -280,8 +280,8 @@ function Hero({
   return (
     <section className="relative isolate overflow-hidden pt-32 md:pt-36">
       <Backdrop />
-      <div className="mx-auto grid max-w-7xl items-center gap-12 px-5 lg:grid-cols-[1.15fr_1fr]">
-        <div>
+      <div className="mx-auto grid max-w-7xl grid-cols-1 items-center gap-12 px-5 lg:grid-cols-[1.15fr_1fr]">
+        <div className="min-w-0">
           <div className="animate-rise inline-flex items-center gap-2 rounded-full border border-primary/30 bg-primary/10 py-1 pl-1 pr-3 text-xs text-primary">
             <span className="rounded-full bg-primary px-2 py-0.5 font-mono text-[10px] font-medium uppercase text-primary-foreground">New</span>
             Clinical reference toolkit · 2026 edition
