@@ -10,33 +10,91 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as RedFlagsRouteImport } from './routes/red-flags'
+import { Route as ToolsRouteImport } from './routes/tools'
+import { Route as CaseIdRouteImport } from './routes/case.$id'
+import { Route as LegalKeyRouteImport } from './routes/legal.$key'
+import { Route as RxIdRouteImport } from './routes/rx.$id'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const RedFlagsRoute = RedFlagsRouteImport.update({
+  id: '/red-flags',
+  path: '/red-flags',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ToolsRoute = ToolsRouteImport.update({
+  id: '/tools',
+  path: '/tools',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CaseIdRoute = CaseIdRouteImport.update({
+  id: '/case/$id',
+  path: '/case/$id',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LegalKeyRoute = LegalKeyRouteImport.update({
+  id: '/legal/$key',
+  path: '/legal/$key',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const RxIdRoute = RxIdRouteImport.update({
+  id: '/rx/$id',
+  path: '/rx/$id',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/red-flags': typeof RedFlagsRoute
+  '/tools': typeof ToolsRoute
+  '/case/$id': typeof CaseIdRoute
+  '/legal/$key': typeof LegalKeyRoute
+  '/rx/$id': typeof RxIdRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/red-flags': typeof RedFlagsRoute
+  '/tools': typeof ToolsRoute
+  '/case/$id': typeof CaseIdRoute
+  '/legal/$key': typeof LegalKeyRoute
+  '/rx/$id': typeof RxIdRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/red-flags': typeof RedFlagsRoute
+  '/tools': typeof ToolsRoute
+  '/case/$id': typeof CaseIdRoute
+  '/legal/$key': typeof LegalKeyRoute
+  '/rx/$id': typeof RxIdRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths:
+    '/' | '/red-flags' | '/tools' | '/case/$id' | '/legal/$key' | '/rx/$id'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to: '/' | '/red-flags' | '/tools' | '/case/$id' | '/legal/$key' | '/rx/$id'
+  id:
+    | '__root__'
+    | '/'
+    | '/red-flags'
+    | '/tools'
+    | '/case/$id'
+    | '/legal/$key'
+    | '/rx/$id'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  RedFlagsRoute: typeof RedFlagsRoute
+  ToolsRoute: typeof ToolsRoute
+  CaseIdRoute: typeof CaseIdRoute
+  LegalKeyRoute: typeof LegalKeyRoute
+  RxIdRoute: typeof RxIdRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -48,11 +106,51 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/red-flags': {
+      id: '/red-flags'
+      path: '/red-flags'
+      fullPath: '/red-flags'
+      preLoaderRoute: typeof RedFlagsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/tools': {
+      id: '/tools'
+      path: '/tools'
+      fullPath: '/tools'
+      preLoaderRoute: typeof ToolsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/case/$id': {
+      id: '/case/$id'
+      path: '/case/$id'
+      fullPath: '/case/$id'
+      preLoaderRoute: typeof CaseIdRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/legal/$key': {
+      id: '/legal/$key'
+      path: '/legal/$key'
+      fullPath: '/legal/$key'
+      preLoaderRoute: typeof LegalKeyRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/rx/$id': {
+      id: '/rx/$id'
+      path: '/rx/$id'
+      fullPath: '/rx/$id'
+      preLoaderRoute: typeof RxIdRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  RedFlagsRoute: RedFlagsRoute,
+  ToolsRoute: ToolsRoute,
+  CaseIdRoute: CaseIdRoute,
+  LegalKeyRoute: LegalKeyRoute,
+  RxIdRoute: RxIdRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
