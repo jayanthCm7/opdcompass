@@ -135,7 +135,7 @@
 
 @layer base {
   * {
-    border-color: var(--color-border);
+    border-color: var(--border);
   }
 
   html {
@@ -144,8 +144,8 @@
   }
 
   body {
-    background-color: var(--color-background);
-    color: var(--color-foreground);
+    background-color: var(--background);
+    color: var(--foreground);
     font-family: var(--font-sans);
     -webkit-font-smoothing: antialiased;
     font-feature-settings: "ss01", "cv11";
@@ -158,7 +158,7 @@
 
   ::selection {
     background: oklch(0.87 0.17 168 / 35%);
-    color: var(--color-foreground);
+    color: var(--foreground);
   }
 }
 
