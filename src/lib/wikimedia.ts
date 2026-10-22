@@ -1,13 +1,23 @@
+import { CASE_IMAGES } from "@/data/case-images";
+
 export interface CommonsImage {
   src: string;
   title: string;
   credit: string;
   lic: string;
-  link: string;
+  link?: string;
+  source?: string;
 }
 
 const mem: Record<string, CommonsImage[]> = {};
 const inflight: Record<string, Promise<CommonsImage[]>> = {};
+
+/** Case pictures: our own copyright-free set when present, otherwise Wikimedia Commons. */
+export async function getCaseImages(c: { id: string; img: string }, limit = 5): Promise<CommonsImage[]> {
+  const own = CASE_IMAGES[c.id];
+  if (own?.length) return own.slice(0, limit);
+  return getImages(c.img, limit);
+}
 
 /** Openly licensed clinical images from Wikimedia Commons (browser-only). */
 export async function getImages(q: string, limit = 5): Promise<CommonsImage[]> {

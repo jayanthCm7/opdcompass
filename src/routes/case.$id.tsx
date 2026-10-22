@@ -24,7 +24,7 @@ import { Backdrop } from "@/components/site/Shell";
 import { SpecialtyBadge } from "@/components/site/CaseCard";
 import { spot } from "@/components/site/ui-context";
 import { getCase, neighbours, splitRx } from "@/lib/search";
-import { getImages, type CommonsImage } from "@/lib/wikimedia";
+import { getCaseImages, type CommonsImage } from "@/lib/wikimedia";
 import { useFavorites, useRecent } from "@/lib/store";
 import { cn } from "@/lib/utils";
 
@@ -302,11 +302,11 @@ function Gallery({ c }: { c: ReturnType<typeof getCase> & {} }) {
     setImgs(null);
     setIdx(0);
     setReveal(false);
-    getImages(c.img, 5).then((r) => alive && setImgs(r));
+    getCaseImages(c, 5).then((r) => alive && setImgs(r));
     return () => {
       alive = false;
     };
-  }, [c.img]);
+  }, [c.id, c.img]);
 
   if (imgs === null) return <div className="min-h-80 animate-pulse rounded-[2rem] bg-card" />;
   if (!imgs.length)
@@ -343,10 +343,15 @@ function Gallery({ c }: { c: ReturnType<typeof getCase> & {} }) {
             </button>
           </>
         )}
-        <a href={im.link} target="_blank" rel="noopener noreferrer" className="absolute inset-x-0 bottom-0 p-5">
+        <a
+          href={im.link}
+          target={im.link ? "_blank" : undefined}
+          rel="noopener noreferrer"
+          className="absolute inset-x-0 bottom-0 p-5"
+        >
           <div className="line-clamp-1 text-sm font-medium">{im.title}</div>
           <div className="mt-0.5 line-clamp-1 font-mono text-[10px] uppercase tracking-wider text-muted-foreground">
-            {im.credit} · {im.lic} · Wikimedia Commons
+            {im.source === "OPD Compass" ? `${im.credit} · ${im.lic}` : `${im.credit} · ${im.lic} · Wikimedia Commons`}
           </div>
         </a>
       </div>
