@@ -1,4 +1,5 @@
-export type ToolValues = Record<string, any>;
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+export type ToolValues = Record<string, any> & { wt?: any; ht?: any; age?: any; scr?: any; sex?: any; c?: any; u?: any; r?: any; b?: any; a?: any; ex?: any; nd?: any; fv?: any; nc?: any; lmp?: any; sbp?: any; dbp?: any };
 export interface ToolResult { big: string; label: string; note: string }
 export interface ToolField { k: string; l: string; ph?: string; type?: "check" | "select" | "date"; opts?: [string, string][] }
 export interface ClinicalTool { id: string; icon: string; name: string; desc: string; fields: ToolField[]; calc(v: ToolValues): ToolResult | null }

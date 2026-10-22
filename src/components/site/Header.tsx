@@ -39,7 +39,7 @@ export function Header() {
             <Link
               key={n.label}
               to={n.to}
-              hash={"hash" in n ? n.hash : undefined}
+              {...("hash" in n ? { hash: n.hash } : {})}
               activeOptions={{ exact: true, includeHash: false }}
               className="group flex items-center gap-2 rounded-xl px-3.5 py-2 text-sm text-muted-foreground transition hover:bg-secondary hover:text-foreground data-[status=active]:text-foreground"
             >
@@ -81,7 +81,7 @@ export function Header() {
           <Link
             key={n.label}
             to={n.to}
-            hash={"hash" in n ? n.hash : undefined}
+            {...("hash" in n ? { hash: n.hash } : {})}
             activeOptions={{ exact: true, includeHash: false }}
             className="flex flex-1 flex-col items-center gap-1 rounded-xl py-2 text-[10px] font-medium text-muted-foreground data-[status=active]:bg-secondary data-[status=active]:text-primary"
           >

@@ -315,7 +315,7 @@ function Gallery({ c }: { c: ReturnType<typeof getCase> & {} }) {
       </div>
     );
 
-  const im = imgs[idx];
+  const im = imgs[idx] ?? imgs[0]!;
   const blur = c.sens && !reveal;
   return (
     <div className="animate-rise flex flex-col gap-3">
