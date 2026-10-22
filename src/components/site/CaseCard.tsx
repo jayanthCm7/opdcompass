@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import { ArrowUpRight, Star } from "lucide-react";
 import { toast } from "sonner";
 import type { ClinicalCase } from "@/data/cases";
-import { getImages } from "@/lib/wikimedia";
+import { getCaseImages } from "@/lib/wikimedia";
 import { useFavorites } from "@/lib/store";
 import { cn } from "@/lib/utils";
 import { spot } from "./ui-context";
@@ -28,11 +28,11 @@ export function useThumb(c: ClinicalCase) {
   const [src, setSrc] = useState<string | null>(null);
   useEffect(() => {
     let alive = true;
-    getImages(c.img, 1).then((im) => alive && im[0] && setSrc(im[0].src));
+    getCaseImages(c, 1).then((im) => alive && im[0] && setSrc(im[0].src));
     return () => {
       alive = false;
     };
-  }, [c.img]);
+  }, [c.id, c.img]);
   return src;
 }
 
