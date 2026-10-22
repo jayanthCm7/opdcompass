@@ -1,5 +1,5 @@
 /* Author-written legal copy, rendered as trusted static HTML. */
-const H = (t: string) => `<h4 class="pt-3 text-sm font-black text-foreground">${t}</h4>`;
+const H = (t: string) => `<h4 class="pt-4 font-display text-base font-semibold text-foreground">${t}</h4>`;
 const P = (t: string) => `<p>${t}</p>`;
 const UL = (a: string[]) => `<ul class="list-disc space-y-1.5 pl-5">${a.map((x) => `<li>${x}</li>`).join("")}</ul>`;
 export const CONTACT_EMAIL = "jayanthcm.arpitha@gmail.com";
@@ -76,10 +76,10 @@ export const LEGAL: Record<string, { title: string; html: string }> = {
       P("OPD Compass does not use tracking cookies."),
       H("Local storage keys used"),
       UL([
-        "<code class='rounded bg-slate-100 px-1'>opd_fav</code> — your bookmarked clinical cases",
-        "<code class='rounded bg-slate-100 px-1'>opd_doc</code> — custom doctor letterhead details",
-        "<code class='rounded bg-slate-100 px-1'>opd_dark</code> — light/dark theme preference",
-        "<code class='rounded bg-slate-100 px-1'>opd_img_*</code> — cached image query responses"
+        "<code class='rounded bg-muted px-1 font-mono text-xs'>opd_fav</code> — your bookmarked clinical cases",
+        "<code class='rounded bg-muted px-1 font-mono text-xs'>opd_doc</code> — custom doctor letterhead details",
+        "<code class='rounded bg-muted px-1 font-mono text-xs'>opd_dark</code> — light/dark theme preference",
+        "<code class='rounded bg-muted px-1 font-mono text-xs'>opd_img_*</code> — cached image query responses"
       ]),
       H("Clearing storage"),
       P("You can reset your data anytime via the Letterhead dialog or by clearing local site storage in your browser.")
