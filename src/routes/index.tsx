@@ -11,7 +11,6 @@ import {
   Mail,
   MapPin,
   MessageCircle,
-  Phone,
   Printer,
   Search,
   ShieldAlert,
@@ -638,7 +637,6 @@ function Contact() {
   const links = [
     { icon: Mail, label: "Email", sub: "jayanthcm.arpitha@gmail.com", href: "mailto:jayanthcm.arpitha@gmail.com?subject=Hello%20Dr%20Jayanth" },
     { icon: MessageCircle, label: "WhatsApp", sub: "Message directly", href: "https://wa.me/917483122714?text=Hello%20Dr%20Jayanth%20C%20M" },
-    { icon: Phone, label: "Call", sub: "+91 74831 22714", href: "tel:+917483122714" },
   ];
   return (
     <section id="contact" className="mx-auto max-w-7xl scroll-mt-24 px-5 pt-32">
