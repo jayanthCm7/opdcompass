@@ -11,7 +11,6 @@ import {
   Mail,
   MapPin,
   MessageCircle,
-  Phone,
   Printer,
   Search,
   ShieldAlert,
