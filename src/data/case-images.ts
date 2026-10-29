@@ -4,6 +4,10 @@ import peCouple from "@/assets/cases/pe-couple-counselling.jpg";
 import peTiming from "@/assets/cases/pe-timing-treatment.jpg";
 import pePelvic from "@/assets/cases/pe-pelvic-floor.jpg";
 import peSerotonin from "@/assets/cases/pe-serotonin.jpg";
+import abCough from "@/assets/cases/ab-cough.jpg";
+import abAirways from "@/assets/cases/ab-airways.jpg";
+import abSteth from "@/assets/cases/ab-stethoscope.jpg";
+import abFluids from "@/assets/cases/ab-warm-fluids.jpg";
 
 const own = (src: string, title: string): CommonsImage => ({
   src,
@@ -15,6 +19,12 @@ const own = (src: string, title: string): CommonsImage => ({
 
 /** Original, copyright-free pictures that replace Wikimedia results for specific cases. */
 export const CASE_IMAGES: Record<string, CommonsImage[]> = {
+  m3: [
+    own(abCough, "Productive cough at home"),
+    own(abAirways, "Inflamed bronchial tubes with mucus"),
+    own(abSteth, "Chest auscultation in OPD"),
+    own(abFluids, "Warm fluids and rest"),
+  ],
   m12: [
     own(peConsult, "Confidential men's health consultation"),
     own(peCouple, "Couple counselling and sex therapy"),
