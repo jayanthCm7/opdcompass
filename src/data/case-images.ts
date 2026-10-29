@@ -4,6 +4,10 @@ import peCouple from "@/assets/cases/pe-couple-counselling.jpg";
 import peTiming from "@/assets/cases/pe-timing-treatment.jpg";
 import pePelvic from "@/assets/cases/pe-pelvic-floor.jpg";
 import peSerotonin from "@/assets/cases/pe-serotonin.jpg";
+import gPain from "@/assets/cases/gerd-pain.jpg";
+import gReflux from "@/assets/cases/gerd-reflux.jpg";
+import gExam from "@/assets/cases/gerd-exam.jpg";
+import gDiet from "@/assets/cases/gerd-diet.jpg";
 import abCough from "@/assets/cases/ab-cough.jpg";
 import abAirways from "@/assets/cases/ab-airways.jpg";
 import abSteth from "@/assets/cases/ab-stethoscope.jpg";
@@ -19,6 +23,12 @@ const own = (src: string, title: string): CommonsImage => ({
 
 /** Original, copyright-free pictures that replace Wikimedia results for specific cases. */
 export const CASE_IMAGES: Record<string, CommonsImage[]> = {
+  m2: [
+    own(gPain, "Burning epigastric pain"),
+    own(gReflux, "Acid reflux through a weak sphincter"),
+    own(gExam, "Abdominal examination in OPD"),
+    own(gDiet, "Light meals, less spicy and fried food"),
+  ],
   m3: [
     own(abCough, "Productive cough at home"),
     own(abAirways, "Inflamed bronchial tubes with mucus"),
