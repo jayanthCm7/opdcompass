@@ -8,6 +8,10 @@ import gPain from "@/assets/cases/gerd-pain.jpg";
 import gReflux from "@/assets/cases/gerd-reflux.jpg";
 import gExam from "@/assets/cases/gerd-exam.jpg";
 import gDiet from "@/assets/cases/gerd-diet.jpg";
+import bDis from "@/assets/cases/bloat-discomfort.jpg";
+import bGut from "@/assets/cases/bloat-gut.jpg";
+import bCon from "@/assets/cases/bloat-consult.jpg";
+import bWalk from "@/assets/cases/bloat-walk.jpg";
 import abCough from "@/assets/cases/ab-cough.jpg";
 import abAirways from "@/assets/cases/ab-airways.jpg";
 import abSteth from "@/assets/cases/ab-stethoscope.jpg";
@@ -34,6 +38,12 @@ export const CASE_IMAGES: Record<string, CommonsImage[]> = {
     own(abAirways, "Inflamed bronchial tubes with mucus"),
     own(abSteth, "Chest auscultation in OPD"),
     own(abFluids, "Warm fluids and rest"),
+  ],
+  m6: [
+    own(bDis, "Bloating and fullness after meals"),
+    own(bGut, "Gas trapped in the bowel"),
+    own(bCon, "Explaining digestion in OPD"),
+    own(bWalk, "Eat slowly, walk after meals"),
   ],
   m12: [
     own(peConsult, "Confidential men's health consultation"),
