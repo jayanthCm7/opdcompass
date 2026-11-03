@@ -28,6 +28,11 @@ import m23 from "@/assets/cases/m23.jpg";
 import m29 from "@/assets/cases/m29.jpg";
 import m30 from "@/assets/cases/m30.jpg";
 import m35 from "@/assets/cases/m35.jpg";
+import m9 from "@/assets/cases/m9.jpg";
+import m11 from "@/assets/cases/m11.jpg";
+import m22 from "@/assets/cases/m22.jpg";
+import g16 from "@/assets/cases/g16.jpg";
+import g17 from "@/assets/cases/g17.jpg";
 
 const own = (src: string, title: string): CommonsImage => ({
   src,
@@ -51,6 +56,11 @@ export const CASE_IMAGES: Record<string, CommonsImage[]> = {
   m29: [own(m29, "Acute diarrhoea and ORS")],
   m30: [own(m30, "Dyslipidemia and heart health")],
   m35: [own(m35, "Migraine attack")],
+  m9: [own(m9, "Diffuse hair fall")],
+  m11: [own(m11, "Semen analysis consultation")],
+  m22: [own(m22, "Bell palsy facial examination")],
+  g16: [own(g16, "Emergency contraception counselling")],
+  g17: [own(g17, "Menopause hot flush")],
   m2: [
     own(gPain, "Burning epigastric pain"),
     own(gReflux, "Acid reflux through a weak sphincter"),
