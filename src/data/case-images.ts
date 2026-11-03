@@ -16,6 +16,18 @@ import abCough from "@/assets/cases/ab-cough.jpg";
 import abAirways from "@/assets/cases/ab-airways.jpg";
 import abSteth from "@/assets/cases/ab-stethoscope.jpg";
 import abFluids from "@/assets/cases/ab-warm-fluids.jpg";
+import m4 from "@/assets/cases/m4.jpg";
+import m5 from "@/assets/cases/m5.jpg";
+import m7 from "@/assets/cases/m7.jpg";
+import m8 from "@/assets/cases/m8.jpg";
+import m10 from "@/assets/cases/m10.jpg";
+import m14 from "@/assets/cases/m14.jpg";
+import m16 from "@/assets/cases/m16.jpg";
+import m18 from "@/assets/cases/m18.jpg";
+import m23 from "@/assets/cases/m23.jpg";
+import m29 from "@/assets/cases/m29.jpg";
+import m30 from "@/assets/cases/m30.jpg";
+import m35 from "@/assets/cases/m35.jpg";
 
 const own = (src: string, title: string): CommonsImage => ({
   src,
@@ -27,6 +39,18 @@ const own = (src: string, title: string): CommonsImage => ({
 
 /** Original, copyright-free pictures that replace Wikimedia results for specific cases. */
 export const CASE_IMAGES: Record<string, CommonsImage[]> = {
+  m4: [own(m4, "Recurrent headache")],
+  m5: [own(m5, "Neuropathic pain")],
+  m7: [own(m7, "Blood pressure check in OPD")],
+  m8: [own(m8, "Bed wetting in teens")],
+  m10: [own(m10, "Confidential men's health consultation")],
+  m14: [own(m14, "Acute filariasis")],
+  m16: [own(m16, "Typhoid fever")],
+  m18: [own(m18, "Type 2 diabetes care")],
+  m23: [own(m23, "Joint pain and arthritis")],
+  m29: [own(m29, "Acute diarrhoea and ORS")],
+  m30: [own(m30, "Dyslipidemia and heart health")],
+  m35: [own(m35, "Migraine attack")],
   m2: [
     own(gPain, "Burning epigastric pain"),
     own(gReflux, "Acid reflux through a weak sphincter"),
